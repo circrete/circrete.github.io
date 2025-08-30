@@ -1,1 +1,6 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-circrete-red: #dc4057;
+  --color-circrete-mokka: #eaf1cf;
+}

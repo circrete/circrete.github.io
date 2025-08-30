@@ -13,7 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-circrete-mokka text-circrete-red max-w-screen-md mx-auto">
+        <div className="bg-red-50">{children}</div>
+      </body>
     </html>
   );
 }
