@@ -1,5 +1,5 @@
-export const Home = () => {
+const Page = () => {
   return <div>My First Subpage</div>;
 };
 
-export default Home;
+export default Page;
