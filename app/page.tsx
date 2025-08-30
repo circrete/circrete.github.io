@@ -3,7 +3,7 @@ import { getPathArrayForRadiusAndKnots } from './lib/circleLineAlgorithm';
 export default function Home() {
   return (
     <main title="circrete" className="bg-circrete-mokka">
-      <svg width="800" height="800" xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 400 300">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 400 300" className="max-w-full">
         <path id="base-path" stroke="transparent" fill="transparent" strokeWidth="0">
           <animate
             attributeName="d"
