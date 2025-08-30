@@ -32,14 +32,19 @@ export const circleAtIndex = (radius: number, knots: number, index: number) => {
 
   const dCenter = { x: 0, y: radius };
 
+  const dBefore = { x: -arcDistance * 0.25, y: 0 };
+  const dAfter = { x: arcDistance * 0.25, y: 0 };
+
   const pointDirectionArray: {
     dBefore: { x: number; y: number };
     dAfter: { x: number; y: number };
     position: { x: number; y: number };
-  }[] = [];
-
-  const dBefore = { x: -arcDistance * 0.25, y: 0 };
-  const dAfter = { x: arcDistance * 0.25, y: 0 };
+  }[] = [
+    { dBefore, dAfter, position: { x: -arcDistance * 4, y: 0 } },
+    { dBefore, dAfter, position: { x: -arcDistance * 3, y: 0 } },
+    { dBefore, dAfter, position: { x: -arcDistance * 2, y: 0 } },
+    { dBefore, dAfter, position: { x: -arcDistance, y: 0 } }
+  ];
 
   for (let i = 0; i < knots + 1; i++) {
     const position = {
@@ -83,9 +88,7 @@ const getPathForPointDirectionArray = (
 export const getPathArrayForRadiusAndKnots = (radius: number, knots: number) => {
   const pathArray: string[] = [];
 
-  for (let i = 0; i < knots + 1; i++) {
-    pathArray.push(getPathForPointDirectionArray(circleAtIndex(radius, knots, i)));
-  }
+  for (let i = 0; i < knots + 1; i++) pathArray.push(getPathForPointDirectionArray(circleAtIndex(radius, knots, i)));
 
   // add the first a couple of times add the last a couple of times and then add an inverted instance of the whole pathArray
   pathArray.push(...pathArray.slice(-1));
